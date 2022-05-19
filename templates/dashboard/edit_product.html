@@ -1,0 +1,199 @@
+{% include 'dashboard/header.html' %}
+<!-- [ navigation menu ] end -->
+<div class="pcoded-content">
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header card">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <i class="feather icon-clipboard bg-c-blue"></i>
+                    <div class="d-inline col-text">
+                        <h5>Edit Product</h5>
+{#                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>#}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class=" breadcrumb breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="index-2.html"><i class="feather icon-home"></i></a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Form Components</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#!">Group Add-Ons</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ breadcrumb ] end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Input Group Alignment</h5>
+                            <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
+                        </div>
+                        <div class="card-block col-text-2">
+                            <form action="/edit_products/{{ prod.p_id_pk }}" method="POST" enctype="multipart/form-data">
+                                <div class="row">
+                                    <label class="col-sm-4 col-lg-2 col-form-label"> Product Name</label>
+                                    <div class="col-sm-8 col-lg-10">
+                                        <div class="input-group">
+                                                             <span class="input-group-prepend">
+                                                                    <label class="input-group-text"><i
+                                                                            class="icofont icofont-queen"></i></label>
+                                                                </span>
+                                            <input type="text" class="form-control" id="name" name="p_name"
+                                                   value="{{ prod.p_name }}" placeholder="Product Name" required=True>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-4 col-lg-2 col-form-label"> Product Description</label>
+                                    <div class="col-sm-8 col-lg-10">
+                                        <div class="input-group">
+                                                             <span class="input-group-prepend">
+                                                                    <label class="input-group-text"><i
+                                                                            class="icofont icofont-queen"></i></label>
+                                                                </span>
+                                           <input type="text" class="form-control" name="p_desc" value="{{ prod.p_desc }}"
+                                                   placeholder="Description" required=True>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-4 col-lg-2 col-form-label">Product Price </label>
+                                    <div class="col-sm-8 col-lg-10">
+                                        <div class="input-group">
+                                                                <span class="input-group-prepend">
+                                                                    <label class="input-group-text"><i
+                                                                            class="icofont icofont-queen"></i></label>
+                                                                </span>
+                                            <input type="text" class="form-control" name="p_price" value="{{ prod.p_price }}"
+                                                   placeholder="Price" required=True>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-4 col-lg-2 col-form-label">Product Image
+                                    </label>
+                                    <div class="col-sm-8 col-lg-10">
+                                        <div class="input-group">
+                                            <div class="input-group">
+                                                                <span class="input-group-prepend">
+                                                                    <label class="input-group-text"><i
+                                                                            class="icofont icofont-presentation"></i></label>
+                                                                </span>
+                                         {% set fname = 'uploads/' + prod.p_image %}
+                                                <img src='{{ url_for('static', filename=fname) }}'/>
+
+                                                   <input  type="file" name="p_image"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+<div class="p-20 p-l-50">
+      <button class="btn btn-primary waves-effect waves-light" type="submit" value="edit">
+                                        Save Changes
+                                    </button>
+</div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Page-body end -->
+                </div>
+            </div>
+            <!-- Main-body end -->
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Warning Section Starts -->
+<!-- Older IE warning message -->
+<!--[if lt IE 10]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="../files/assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="../files/assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="../files/assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="../files/assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="../files/assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+<script src="{{ url_for('static', filename='js/waves.min.js') }}"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.slimscroll.js') }}"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/css-scrollbars.js') }}"></script>
+<!-- Custom js -->
+<script src="{{ url_for('static', filename='js/pcoded.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vertical-layout.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.min.js') }}"></script>
+</body>
+
+
+<!-- Mirrored from demo.dashboardpack.com/admindek-html/default/form-elements-add-on.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Jun 2021 05:27:21 GMT -->
+</html>
